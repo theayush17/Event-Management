@@ -1,0 +1,540 @@
+body {
+margin: 0;
+padding: 0;
+font-family: 'Times New Roman', Times, serif;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #f0f0f0, #ffffff); 
+    border-radius: 10px; 
+    box-shadow: inset 0 0 5px grey; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #e921b1, #d919d6);
+    border-radius: 10px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #d9534f, #c9302c); 
+}
+
+
+.partner-logo {
+max-height: 50px; /* Adjust as needed */
+max-width: 150px; /* Adjust as needed */ 
+}
+
+.carousel-item {
+background-image: url("/img/pixelcut-export.jpeg");
+width: 100%;
+height: 600px;
+background-size: cover;
+}
+
+.icon {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+p {
+font-size: 20px;
+color: white;
+}
+
+.icon1 {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+i {
+color: yellow;
+}
+
+.testimonial-author {
+text-align: center;
+font-size: 18px;
+color: white;
+}
+#aa{
+color:yellow;
+font-size: large;
+}
+
+
+footer {
+background: url('/img/lp-wedding-venue.jpg') no-repeat center center/cover ;
+color: #fff;
+padding: 20px 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+position: relative;
+}
+
+footer::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 1;
+}
+
+.footer-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+padding: 20px;
+max-width: 1500px;
+width: 100%;
+position: relative;
+z-index: 2;
+gap: 100px;
+}
+
+.footer-container h2, h3 {
+margin-top: 10px;
+padding: 0px 20px;
+}
+
+.footer-container p, ul {
+margin: 0;
+padding: 0px 20px;
+list-style: none;
+}
+
+.footer-container a {
+text-decoration: none;
+color: #ccc;
+}
+
+.footer-container a:hover {
+color: #fff;
+}
+
+.links {
+display: flex;
+justify-content: center;
+padding: 0px;
+}
+
+.links div {
+margin-right: 20px;
+}
+
+ul li {
+margin-bottom: 10px;
+}
+
+.contact ul li {
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+}
+
+.contact ul li img {
+width: 16px;
+height: 16px;
+margin-right: 8px;
+}
+
+.fas{
+padding-right: 8px;
+}
+.container-ayu {
+background: url('/img/wedding-glasses-wine-champagne-from-clear-crystal_419896-2891.png') no-repeat center center/cover;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 50px;
+height: 100vh;
+position: relative;
+}
+
+.container-ayu::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.6);
+z-index: 1;
+}
+
+.text-content, .form-content {
+position: relative;
+z-index: 2;
+}
+
+.text-content {
+max-width: 50%;
+}
+
+.text-content h1 {
+font-size: 2.5em;
+margin-bottom: 20px;
+}
+
+.text-content p {
+font-size: 1em;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+form input, form textarea {
+padding: 10px;
+padding-right: 250px;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 1em;
+}
+
+form textarea {
+resize: none;
+}
+
+form button {
+padding: 10px;
+background-color: purple;
+color: #fff;
+border: none;
+border-radius: 4px;
+font-size: 1em;
+cursor: pointer;
+}
+
+form button:hover {
+background-color: darkviolet;
+}
+
+.services {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+padding: 2rem;
+}
+
+.service-card {
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+padding: 10px;
+margin: 10px;
+
+
+}
+
+.service-card h3 {
+margin: 1rem 0;
+color:#333;
+}
+
+.service-card p {
+padding: 0 1rem;
+color:#555;
+}
+
+.service-card a {
+display: inline-block;
+margin: 1rem;
+color: #007bff;
+text-decoration: none;
+font-weight: bold;
+}
+
+.service-card:hover {
+transform: translateY(-15px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+.review-question-section {
+background-color: #f8f9fa;
+padding: 30px;
+}
+
+.review-question-section h2, .review-question-section h3 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.review-question-section textarea {
+width: 83%;
+height: 50px;
+margin-bottom: 10px;
+}
+
+.location-section {
+background-color: #e9ecef;
+padding: 50px 0;
+text-align: center;
+}
+
+.location-section h2 {
+margin-bottom: 20px;
+}
+
+.review-card {
+background-color: #fff;
+border: 1px solid #ddd;
+padding: 20px;
+margin: 10px 0;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-card .review-author {
+font-weight: bold;
+color: #007bff;
+}
+
+.review-card .review-text {
+color: #555;
+font-style: italic;
+}
+
+.review-card .review-rating {
+color: #f39c12;
+}
+
+*{
+box-sizing: border-box;
+}
+
+
+.bg-1{
+background-image: url(https://images.pexels.com/photos/29775304/pexels-photo-29775304/free-photo-of-outdoor-event-sound-and-lighting-setup-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+.bg-2{
+background-image: url(https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+.bg-3{
+background-image: url(https://images.pexels.com/photos/16120220/pexels-photo-16120220/free-photo-of-wedding-reception-venue.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); 
+}
+
+.id1{
+background-color: rgba(2, 13, 2, 0.3);
+}
+
+.hbrand{
+font-family:fantasy;
+}
+
+.carousel-image{
+height: 100vh;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1;
+}
+
+.navbar-toggler{
+color: white;
+background-color: aliceblue;
+}
+
+#nav-it{
+font-size: 1.1rem;
+font-weight: 6rem;
+text-align: center;
+color: rgb(247, 241, 241);
+}
+
+.nav-link {
+color: white;
+transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+.nav-link:hover {
+color: #4f9ba3; 
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 5px; 
+}
+
+
+.dropdown-menu {
+background-color: rgba(0, 0, 0, 0.6);
+transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+
+.dropdown-item{
+color: white;
+}
+.dropdown-item:hover {
+color: #4f9ba3;
+background-color: rgba(215, 202, 202, 0.368);
+}
+
+.carousel-image {
+background-size: 100%;
+background-position: center;
+animation: zoomInTransform 6s infinite;
+}
+
+@keyframes zoomInTransform {
+from{
+background-size: 100%; 
+}
+to {
+background-size: 120%; 
+}
+}
+
+.content {
+margin-top: 170px;
+margin-bottom: 30px;
+padding: 20px;
+position: relative;
+z-index: 2;
+color: white;
+}
+
+.content .hc{
+font-family: 'Times New Roman', Times, serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.innercontent {
+overflow: visible; 
+}
+
+.innercontent p {
+font-family: 'Times New Roman', Times, serif;
+font-optical-sizing: auto;
+font-weight: 446;
+font-style: normal;
+}
+
+.elementor-grid-item{
+display: inline-block;
+}
+
+.elementor-grid-item i{
+color: white;
+font-size: 1.5rem;
+padding-right: 1.1rem;
+margin: 25% auto;
+}
+.secondh{
+font-family: 'Times New Roman', Times, serif;
+font-size: 2em;
+padding-bottom: 4px;
+}
+
+.gallery {
+padding: 50px 20px;
+}
+
+
+.gallery img {
+border-radius: 10px; 
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+max-width: 100%; 
+transition: transform 0.3s ease;
+}
+
+
+.img-wrapper img:hover {
+transform: scale(1.05); 
+}
+
+.gallery span {
+font-family:'Times New Roman', Times, serif ;
+font-size: 1rem;
+font-weight: bold;
+color: #333;
+}
+.img-fluid {
+width: 100%;
+height: 300px;
+object-fit: cover;
+}
+
+.img-wrapper .col-md-2 {
+min-height: 200px;
+}
+
+
+.counter-section{
+background-color: #121212;
+color: #f8f9fa;
+font-family: 'Times New Roman', Times, serif;
+text-align: center;
+display: block;
+justify-content: center;
+align-items: center;
+margin-top: 1%;
+margin-bottom: 2%;
+}
+
+.count {
+font-size: 2.5rem;
+font-weight: bold;
+}
+.label {
+font-size: 1rem;
+color: #e0a899;
+}
+.fw-bold{
+font-family: 'Times New Roman', Times, serif ;
+}
+
+.countcolor{
+font-family:'Times New Roman', Times, serif ;
+font-weight: bold;
+font-size: 1.2em;
+color: rgb(224, 146, 1);
+}
+
+.txt-1{
+font-family: 'Times New Roman', Times, serif;
+color: #023047;
+font-weight: 600;
+}

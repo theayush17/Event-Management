@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Roy Event Management</title>
+  <link rel="icon" href="https://static.vecteezy.com/system/resources/thumbnails/032/699/938/small_2x/gold-letter-r-png.png" type="image/x-icon">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@419&family=Playwrite+BE+WAL+Guides&family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@446&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="https://images.pexels.com/photos/29775304/pexels-photo-29775304/free-photo-of-outdoor-event-sound-and-lighting-setup-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" as="image">
+  <link rel="preload" href="https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" as="image">
+  <link rel="preload" href="https://images.pexels.com/photos/16120220/pexels-photo-16120220/free-photo-of-wedding-reception-venue.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" as="image">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Heading part of webpage -->
+
+  <header>  
+    <div id="carouselExampleSlidesOnly" class="carousel slide id1" data-bs-ride="carousel">
+        <div class="carousel-inner">
+                <div class="carousel-item carousel-image bg-1 active" data-bs-interval="1000">
+                  <div class="overlay"></div>
+                </div>
+                <div class="carousel-item carousel-image bg-2" data-bs-interval="1000">
+                  <div class="overlay"></div>
+                </div>
+                <div class="carousel-item carousel-image bg-3" data-bs-interval="1000">
+                  <div class="overlay"></div>
+                </div>
+                <nav class="navbar sticky-top navbar-expand-lg custom-navbar bg-none">
+                  <div class="container-fluid">
+                    <a class="navbar-brand hbrand" href="#" style="font-family: fantasy; font-size: 45px; color: rgb(255, 228, 77);">
+                      <img src="https://static.vecteezy.com/system/resources/thumbnails/032/699/938/small_2x/gold-letter-r-png.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" >
+                      oy
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-it" aria-controls="nav-it" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="nav-it">
+                      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link " aria-current="page" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ABOUT US
+                          </a>
+                          <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" href="#">Stories by Roy</a></li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GALLERY</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="/dependencies/gallery.html" target="_blank" class="dropdown-item">Photos</a></li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Wedding Planner</a></li>
+                            <li><a class="dropdown-item" href="#">Music & Entertainment</a></li>
+                            <li><a class="dropdown-item" href="#">Private Parties</a></li>
+                          </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link " href="#">CONTACT US</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                
+                <div class="container">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="content">
+                      <div class="innercontent">
+                        <p>Take a trip to Paradise</p>
+                        <h1 class="display-3 hc">Partner with Roy Event Management</h1>
+                        <div class="elementor-widget">
+                          <span class="elementor-grid-item">
+                            <a class="elementor-icon elementor-social-icons" href="https://www.instagram.com/melodiaeventmanagement/" target="_blank" rel="noopener">
+                            <span class="elementor-screen-only">  </span>
+                            <i class="fab fa-instagram"></i></a>
+                          </span>
+                          <span class="elementor-grid-item">
+                            <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-6142abd" href="https://www.youtube.com" target="_blank" rel="noopener">
+                            <span class="elementor-screen-only"></span>
+                            <i class="fab fa-youtube"></i></a>
+                          </span>
+                          <span class="elementor-grid-item">
+                            <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-shrink elementor-repeater-item-cf2be19" href="https://www.facebook.com" target="_blank" rel="noopener">
+                            <span class="elementor-screen-only"></span>
+                            <i class="fab fa-facebook"></i></a>
+                          </span>
+                          <span class="elementor-grid-item">
+                            <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-shrink elementor-repeater-item-9a8518e" href="https://www.linkedin.com" target="_blank" rel="noopener">
+                            <span class="elementor-screen-only"></span>
+                            <i class="fab fa-linkedin"></i></a>
+                          </span>
+                          <span class="elementor-grid-item">
+                            <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-shrink elementor-repeater-item-9a8518e" href="https://www.linkedin.com" target="_blank" rel="noopener">
+                            <span class="elementor-screen-only"></span>
+                            <i class="fab fa-twitter"></i></a>
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+        </div>
+    </div>          
+  </header>
+
+  <!-- Main body begins -->
+
+  <main>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="service-card">
+            <img src="https://storage.unitedwebnetwork.com/files/1189/7a7dab9865d31598b26943a1b8083f6d.webp" alt="Corporate Event Management">
+            <h3>Corporate Event</h3>
+            <p>Make a statement at your next corporate event with Melodia Event Management Company in Kerala.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://www.theweddingschool.in/wp-content/uploads/2022/10/blog-68-1-e1666101435833.jpg" alt="Wedding Planners">
+            <h3>Wedding Planners</h3>
+            <p>Plan the perfect wedding event to be remembered forever!</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://www.weddingsutra.com/wp-content/mussoorie-03.jpg" alt="Destination Weddings">
+            <h3>Destination Weddings</h3>
+            <p>Celebrate your special day in paradise with luxurious destination weddings.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://dstudios.in/wp-content/uploads/2024/08/indian-beach-wedding.webp" alt="Beach Weddings">
+            <h3>Beach Weddings</h3>
+            <p>Celebrate your love amidst serene shores and palm-fringed beaches of Kerala.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://www.travelandtourworld.com/wp-content/uploads/2024/08/Dennis-Smith.jpg" alt="Music & Entertainment">
+            <h3>Music & Entertainment</h3>
+            <p>From live bands and DJs to mesmerizing performers, we have everything you need.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/909225328/photo/holiday-celebration-at-party.jpg?s=612x612&w=0&k=20&c=qtclslr3-cnushTqFdvB-IVfqCZKHRmHU7D4hCBHByw=" alt="Private Parties">
+            <h3>Private Parties</h3>
+            <p>Unforgettable private parties that create lasting memories.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+          <img src="https://www.bca.co.id/-/media/Feature/News/Edukatips/2022/09/20220912-tips-nonton-konser-pertama-kali-banner.jpg" alt="Private Parties">
+          <h3>Concerts</h3>
+          <p>Unleash the Magic: Live Concerts, Unforgettable Moments Await!.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="service-card">
+          <img src="https://4.imimg.com/data4/TU/GV/MY-20979260/events.jpg" alt="Private Parties">
+          <h3>Exhibition Events</h3>
+          <p>Discover Creativity: Inspiring Exhibitions, Endless Possibilities, and Memorable Experiences!.</p>
+          <a href="#">Learn More</a>
+        </div>
+    </section>
+
+    <section class="counter-sec">
+      <div class="container-fluid counter-section py-5" style="background-color:#fefae0; color: #0a090a;">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="fw-bold">Successfully Completed 7000+ Projects</h2>
+          </div>
+        </div>
+      
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-3">
+            <div class="count display-4 fw-bold txt-1" data-target="200">200+</div>
+            <div class="label fs-5 countcolor" >Wedding</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="count display-4 fw-bold txt-1" data-target="2000">2000+</div>
+            <div class="label fs-5 countcolor">Private Events</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="count display-4 fw-bold txt-1" data-target="4000">4000+</div>
+            <div class="label fs-5 countcolor" >Exhibitions</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="count display-4 fw-bold txt-1" data-target="1000">1000+</div>
+            <div class="label fs-5 countcolor" >Activations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-part">
+      <div class="container-ayu">
+          <div class="text-content">
+            <h1>Looking for the Most Creative & Innovative Event Planners?</h1>
+            <p>Imagine celebrating the most special events of your life without worrying about a single thing. Roy&reg; Events is here to make your dream events come true! Our expert event management team offers professional event planning and management services in cities, villages, and small towns across India, from south to north, using creative and innovative methods to plan and curate perfect, hassle-free celebrations that will captivate your attendees.</p>
+            <p>Contact us today to bring your vision to life and create unforgettable memories!</p>
+          </div>
+      
+          <div class="form-content">
+            <form>
+              <input type="text" placeholder="Enter your Full Name" required>
+              <input type="tel" placeholder="Enter your Phone Number" required>
+              <input type="email" placeholder="Enter your Email ID" required>
+              <textarea placeholder="Message" rows="4" required></textarea>
+              <button type="submit">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+    </section>
+
+    <section class="container-fluid text-dark p-5 partners">
+      <h2 class="text-center mb-4">Our Partners</h2>
+      <div class="row text-center justify-content-center">
+        <div class="col-auto">
+            <img src="https://m.economictimes.com/thumb/msid-82574882,width-1200,height-900,resizemode-4,imgsize-98453/5.jpg" alt="Welspun Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe1qlRKWItqx54jtq8gM0EQTwKBkO76ow_Kg&s" alt="Teradata Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://www.livelaw.in/h-upload/images/tatamotors-customer-care-number.jpg" alt="Tata Motors Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://media.licdn.com/dms/image/v2/C560BAQF4X5CI9jXQDg/company-logo_200_200/company-logo_200_200/0/1659588683750?e=2147483647&v=beta&t=ceEdH03B2BhR_MFC4rbrKNOOKNx_F_fLgvzFgwLYHaU" alt="Sumitomo Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1xoWuB_9x62z_lgxHaQchwPS7bBYO0VXWA&s" alt="SBI Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://images.samsung.com/is/image/samsung/assets/in/about-us/brand/logo/mo/256_144_4.png?$512_N_PNG$" alt="Samsung Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://i.pinimg.com/originals/0a/7d/42/0a7d426d077d5a44511bd906effb5cd9.jpg" alt="Resso Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://images.ctfassets.net/13yu1u3hrn9u/2vZmjaiDFCq63syHlKLkJO/0116852587e894dbb6f46d3085446536/logoUrl.png" alt="P&G Health Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Logo_Nayara_Energy.jpg/2398px-Logo_Nayara_Energy.jpg" alt="Nayara Energy Logo" class="partner-logo">
+        </div>
+        <div class="col-auto">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/1024px-Xiaomi_logo.svg.png" alt="Mi Logo" class="partner-logo">
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+      <h2>Our Location</h2>
+      <p style="color: black;">Roy Event Management is located in Bhubaneswar, Odisha India. We specialize in organizing events across various locations.</p>
+
+      <!-- Google Map -->
+      <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23246.3944994303!2d76.22444841170779!3d10.850519317453712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0837fcd8d51d95%3A0x39bd92b6f00ad928!2sKerala%2C%20India!5e0!3m2!1sen!2sus!4v1675358321424!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="icon">
+                        <img src="https://thumbs.dreamstime.com/b/bubble-doublequote-example-icon-black-vector-graphics-flat-style-eps-use-infographics-web-design-presentations-printed-264685724.jpg" height="100px" width="100px" alt="">
+                    </div>
+                    <br><br><br>
+                    <p class="d-flex justify-content-center">Our experience with the team over at Creaftworld Events can be summed up in</p> 
+                    <p class="d-flex justify-content-center">one word:Awesome. The team promises results, and promptly deliver on their promise.</p>
+                    <p class="d-flex justify-content-center">We've seen results with not only event management but corporate and exhibiton event</p> 
+                    <p class="d-flex justify-content-center">management.Craftworld Events probably best event management company.</p>
+                    <br><br>
+                    <div class="icon1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <br>
+                    <div class="testimonial-author">Suraj Ranade</div>
+                    <br>
+                    <div id="aa" class="testimonial-author">VOLKSWAGEN</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="icon">
+                        <img id="icon" src="https://thumbs.dreamstime.com/b/bubble-doublequote-example-icon-black-vector-graphics-flat-style-eps-use-infographics-web-design-presentations-printed-264685724.jpg" height="100px" width="100px" alt="">
+                    </div>
+                    <br><br><br>
+                    <p class="d-flex justify-content-center">Our Team Craftworld!!!!. The association goes over 5+ yrs... I am sure it will go for ages!!!!.</p>
+                    <p class="d-flex justify-content-center">Our Team is instrumental in working on assignments for Reliance Commercial Finance & Reliance Home Finance.</p>
+                    <p class="d-flex justify-content-center">Initially the work began by doing stalls at trade fairs, load metals.... as a BTL agency for Reliance.</p>
+                    <p class="d-flex justify-content-center">Today they come across as a Business Consultant, who works closely on both brands.... They provide solutions which...</p>
+                    <br>
+                    <div class="icon1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <br>
+                    <div class="testimonial-author">Manish Oberoi</div>
+                    <br>
+                    <div id="aa" class="testimonial-author">RELIANCE</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="icon">
+                        <img id="icon" src="https://thumbs.dreamstime.com/b/bubble-doublequote-example-icon-black-vector-graphics-flat-style-eps-use-infographics-web-design-presentations-printed-264685724.jpg" height="100px" width="100px" alt="">
+                    </div>
+                    <br><br><br>
+                    <p class="d-flex justify-content-center">Exhibiting... in any trade shows is like your entity's face and reputation of our company is in the hands of the fabricator.</p>
+                    <p class="d-flex justify-content-center">After a mess-up by another popular & reputed company, our company sought the help and support of the director of</p>
+                    <p class="d-flex justify-content-center">Craftworld Events & Exhibitions. Our team was completely satisfied. The entire process right from designing to</p>
+                    <p class="d-flex justify-content-center">execution had been flawless, smooth, and highly professional. Craftworld Events was...</p>
+                    <br>
+                    <div class="icon1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <br>
+                    <div class="testimonial-author">S.P.Nainwal</div>
+                    <br>
+                    <div id="aa" class="testimonial-author">EXECUTIVE DIRECTOR</div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+
+    <section id="reviews" class="review-question-section">
+      <h2>User Reviews</h2>
+      <div class="review-card">
+          <div class="review-author">John Doe</div>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <div class="review-text">"This event managements made my wedding day absolutely magical! Every detail was taken care of, and their team went above and beyond to ensure everything ran smoothly. Highly recommend!"</div>
+      </div>
+      <div class="review-card">
+          <div class="review-author">Jane Smith</div>
+          <div class="review-rating">⭐⭐⭐⭐</div>
+          <div class="review-text">"The corporate event we hosted was a huge success thanks to management. Professional, efficient, and full of great ideas for entertainment. Great team!"</div>
+      </div>
+      <div class="review-card">
+          <div class="review-author">Ayesha Khan</div>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <div class="review-text">"Had an amazing beach wedding organized by Roy Event Management. They took care of everything, and the entire experience was beyond expectations!"</div>
+      </div>
+      <h3>Leave a Review</h3>
+      <form>
+          <div class="mb-3">
+              <label for="reviewText" class="form-label">Your Review</label>
+              <textarea id="reviewText" class="form-control" placeholder="Write your review..." required></textarea>
+          </div>
+          <div class="mb-3">
+              <label for="questions" class="form-label">Do you have any other questions?</label>
+              <textarea id="questions" class="form-control" placeholder="Ask any questions..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Submit Review & Questions</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+
+  <footer>
+    <div class="footer-container">
+      <div class="about">
+        <h2>Roy Event Management</h2>
+        <p>
+          Planning a full event has never been easier! Roy&reg; Event Management is an ISO 9001:2015 Certified Event Management Company based in Kerala, India, offering various services to make your events stress-free and memorable.
+        </p>
+      </div>
+
+      <div class="links">
+        <div class="quick-links">
+          <h3 >QUICK LINKS</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Venues</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="other-links">
+          <h3 >OTHER LINKS</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cancellation and Refund Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div class="contact">
+          <h3 >CONTACT INFO</h3>
+          <ul>
+            <li><i class='fas fa-map-marker-alt ' style='font-size:24px'></i>Roy Event Management, Mumbai, Maharastra 400011</li>
+            <li><i class='fas fa-map-marker-alt ' style='font-size:24px'></i>Roy Event Management, Jamshedpur, Jharkhand 831012</li>
+            <li><i class='fas fa-map-marker-alt ' style='font-size:24px'></i>Roy Event Management, Bhubaneswasr, Odisha 751030</li>
+            <li><i class='fas fa-map-marker-alt ' style='font-size:24px'></i>Roy Event Management, Banglore, Karnataka 561030</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/app.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
