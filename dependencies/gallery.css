@@ -2,106 +2,59 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9fc;
-    color: #333;
+    background-color: #000;
+    color: #fff;
 }
 
 ::-webkit-scrollbar {
-    width: 17px;
+width: 17px;
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(90deg, #f0f0f0, #ffffff); 
-    border-radius: 10px; 
-    box-shadow: inset 0 0 5px grey; 
+background: linear-gradient(90deg, #f0f0f0, #ffffff); 
+border-radius: 10px; 
+box-shadow: inset 0 0 5px grey; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #e921b1, #d919d6);
-    border-radius: 10px;
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3); 
+background: linear-gradient(90deg, #e921b1, #d919d6);
+border-radius: 10px;
+box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3); 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(90deg, #d9534f, #c9302c); 
+background: linear-gradient(90deg, #d9534f, #c9302c); 
 }
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-    align-items: start;
-}
-
-.gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer; /* Add cursor pointer to indicate the image is clickable */
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding-top: 60px;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    border-radius: 15px;
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Hover styles */
-.close:hover {
-    color: #ff4a91;
-}
-
 
 .header {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #60096d, #831527);
+    position: relative;
+    background: none;
     color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('/img/hotel-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
 }
 
 .header h1 {
@@ -127,19 +80,17 @@ body {
     padding: 12px 25px;
     margin: 8px;
     cursor: pointer;
-    background: #f0f0f0;
-    border: none;
+    background: transparent;
+    border: 2px solid #fff;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: bold;
-    color: #555;
+    color: #fff;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tab:hover {
-    background: #ff7eb3;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -149,7 +100,124 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: start;
+}
 
-.hidden {
-    display: none;
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    cursor: pointer;
+}
+
+
+
+.gallery img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    /* Hover Effect */
+.gallery img:hover {
+    transform: scale(1.1); /* Zoom effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    opacity: 1; /* Ensure it stays visible */
+}
+
+.gallery img.clicked {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+/* Modal Styles */
+.modal {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 10;
+padding-top: 60px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+margin: auto;
+display: block;
+width: 90%;
+max-width: 700px;
+}
+
+.modal-content:hover {
+transform: scale(1.05); /* Slight zoom effect */
+transition: 0.3s ease;
+}
+
+.close {
+position: absolute;
+top: 20px;
+right: 35px;
+color: white;
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+color: #ff4a91;
+}
+
+
+@media (max-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        margin: 6px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
 }

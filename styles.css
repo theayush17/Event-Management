@@ -80,6 +80,14 @@ height: 100vh;
 position: relative;
 }
 
+.footer-bottom {
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  color: #fff;
+  font-size: 20px;
+}
+
 footer::before {
 content: "";
 position: absolute;
@@ -275,6 +283,7 @@ font-weight: bold;
 .service-card:hover {
 transform: translateY(-15px);
 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+background-color: rgb(230, 220, 232);
 }
 
 html {

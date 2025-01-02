@@ -1,15 +1,9 @@
 $(document).ready(function() {
-           
     $('.tab').click(function() {
         const filter = $(this).data('filter');
-
-
         $('.tab').removeClass('active');
-
-        // Add active class to the clicked tab
         $(this).addClass('active');
 
-       
         if (filter === 'all') {
             $('.gallery img').fadeIn(300);
         } else {
@@ -19,44 +13,50 @@ $(document).ready(function() {
         }
     });
 
-                $(window).resize(function() {
-        const windowWidth = $(this).width();
-        if (windowWidth < 600) {
-            $('.gallery').css('grid-template-columns', 'repeat(auto-fit, minmax(150px, 1fr))');
-        } else {
-            $('.gallery').css('grid-template-columns', 'repeat(auto-fit, minmax(200px, 1fr))');
-        }
-    }).trigger('resize');
-});    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-// Get modal
-var modal = document.getElementById("myModal");
+    document.querySelectorAll('.gallery img').forEach(img => {
+        observer.observe(img);
+    });
 
-// Get the image element and insert it inside the modal
-var modalImg = document.getElementById("img01");
-
-// Get all images in the gallery
-var images = document.querySelectorAll(".gallery img");
-
-// Loop through all images
-images.forEach(function(image) {
-    image.onclick = function() {
-        modal.style.display = "block";  // Show the modal
-        modalImg.src = this.src;       // Set the source of the modal image to the clicked image
-    };
+    $('.gallery img').click(function() {
+        const image = $(this)[0];
+        image.classList.add('clicked');
+        setTimeout(() => {
+            image.classList.remove('clicked');
+        }, 300);
+    });
 });
 
-// Get the close button
-var span = document.getElementsByClassName("close")[0];
+$(document).ready(function () {
+// Modal Elements
+const modal = $('#myModal');
+const modalImg = $('#img01');
+const close = $('.close');
 
-// When the user clicks the close button, close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-};
+// Image Click Event
+$('.gallery img').click(function () {
+modal.show(); // Show modal
+modalImg.attr('src', $(this).attr('src')); // Set clicked image in modal
+});
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
+// Close Modal
+close.click(function () {
+modal.hide(); // Hide modal
+});
+
+// Close Modal on Outside Click
+$(window).click(function (e) {
+if ($(e.target).is(modal)) {
+    modal.hide();
+}
+});
+});
